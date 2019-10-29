@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: # 9FDFCD;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="id.ac.ukdw.mavenproject1.signin">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: #CDEEAA;" />
+      <AnchorPane layoutY="200.0" prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: #FFFA67;" />
+      <Group AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="60.0">
+         <children>
+            <AnchorPane layoutX="120.0" layoutY="61.0" prefHeight="279.0" prefWidth="360.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="60.0">
+               <children>
+                  <AnchorPane layoutX="14.0" layoutY="12.0" prefHeight="255.0" prefWidth="334.0" style="-fx-background-color: #F4FF61;" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="12.0">
+                     <children>
+                        <ImageView fitHeight="75.0" fitWidth="141.0" layoutX="97.0" layoutY="10.0" AnchorPane.bottomAnchor="171.0" AnchorPane.leftAnchor="98.0" AnchorPane.rightAnchor="98.0" AnchorPane.topAnchor="10.0">
+                           <image>
+                              <Image url="@MakanKuy.png" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="loginbtn" layoutX="93.0" layoutY="154.0" mnemonicParsing="false" onAction="#login" onMouseEntered="#mouseinlogin" prefHeight="25.0" prefWidth="147.0" style="-fx-background-color: green;" text="Login" textFill="WHITE" />
+                        <Group layoutX="-32.0" layoutY="-1.0" />
+                        <Label fx:id="register_label" layoutX="137.0" layoutY="232.0" onMouseEntered="#mouseinregister" onMousePressed="#register" prefHeight="21.0" prefWidth="60.0" text="Register" AnchorPane.leftAnchor="137.0" AnchorPane.rightAnchor="141.0">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <PasswordField fx:id="passwordtxt" layoutX="106.0" layoutY="133.0" promptText="Password" />
+                  <TextField fx:id="emailtxt" layoutX="106.0" layoutY="99.0" promptText="Email" />
+               </children>
+            </AnchorPane>
+         </children>
+      </Group>
+   </children>
+</AnchorPane>
