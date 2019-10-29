@@ -28,7 +28,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author DAMIAN
+ * @author Mery
  */
 public class signup implements Initializable{
 
