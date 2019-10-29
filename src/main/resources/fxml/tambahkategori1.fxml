@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.collections.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
@@ -53,12 +54,12 @@
                   </AnchorPane>
                   <ImageView fitHeight="75.0" fitWidth="141.0" layoutX="214.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="263.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="214.26903533935547" AnchorPane.topAnchor="14.0">
                      <image>
-                        <Image url="@../MakanKuy.png" />
+                        <Image url="@MakanKuy.png" />
                      </image>
                   </ImageView>
                   <AnchorPane layoutX="165.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #CDEEAA;" AnchorPane.bottomAnchor="262.0" AnchorPane.leftAnchor="184.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
                      <children>
-                        <Label layoutX="125.0" layoutY="28.0" text="[Nama]" fx:id="namalbl">
+                        <Label fx:id="namalbl" layoutX="125.0" layoutY="28.0" text="[Nama]">
                            <font>
                               <Font name="System Bold" size="15.0" />
                            </font>
