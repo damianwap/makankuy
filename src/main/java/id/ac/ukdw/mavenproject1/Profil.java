@@ -24,7 +24,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author DAMIAN
+ * @author Mery
  */
 public class Profil implements Initializable {
     @FXML
