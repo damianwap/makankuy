@@ -23,7 +23,7 @@ import javafx.stage.Stage;
  *
  * @author DAMIAN
  */
-public class TambahkatController implements Initializable {
+public class TambahKatController implements Initializable {
     @FXML
     private Label tambahkatlbl,editkatlbl,hapuskatlbl,namalbl, keluarlbl;
     
@@ -39,7 +39,7 @@ public class TambahkatController implements Initializable {
        try{
            FXMLLoader loader=new FXMLLoader(getClass().getResource("/fxml/tambahkategori1.fxml"));
            Parent signin = (Parent) loader.load();
-           Tambahkat hm=loader.getController();
+           TambahKat hm=loader.getController();
            hm.setnama(this.namalbl.getText());
            Scene masuk = new Scene(signin);
            Stage app_stage  = (Stage) this.tambahkatlbl.getScene().getWindow();
@@ -71,7 +71,7 @@ public class TambahkatController implements Initializable {
         try{
            FXMLLoader loader=new FXMLLoader(getClass().getResource("/fxml/hapuskategori.fxml"));
            Parent signin = (Parent) loader.load();
-           Hapuskategori hm=loader.getController();
+           HapusKategori hm=loader.getController();
            hm.setnama(this.namalbl.getText());
            Scene masuk = new Scene(signin);
            Stage app_stage  = (Stage) this.hapuskatlbl.getScene().getWindow();

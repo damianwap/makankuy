@@ -87,7 +87,7 @@ public class Home implements Initializable {
         try{
             FXMLLoader loader=new FXMLLoader(getClass().getResource("/fxml/Kategori.fxml"));
             Parent signin = (Parent) loader.load();
-            TambahkatController hm=loader.getController();
+            TambahKatController hm=loader.getController();
             hm.setNama(this.namalbl.getText());
             Scene masuk = new Scene(signin);
             Stage app_stage  = (Stage) this.kategorilbl.getScene().getWindow();
