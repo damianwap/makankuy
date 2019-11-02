@@ -17,32 +17,32 @@
                <children>
                   <AnchorPane layoutY="92.0" prefHeight="258.0" prefWidth="180.0" style="-fx-background-color: #CDEEAA;" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="370.0" AnchorPane.topAnchor="92.0">
                      <children>
-                        <Label layoutX="5.0" layoutY="47.0" text="Profil" AnchorPane.leftAnchor="4.0" AnchorPane.topAnchor="14.0">
+                        <Label layoutX="5.0" layoutY="47.0" text="Profil" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="25.0">
                            <font>
                               <Font name="System Bold" size="15.0" />
                            </font>
                         </Label>
-                        <Label layoutY="83.0" text="Tambah Data" AnchorPane.leftAnchor="4.0" AnchorPane.topAnchor="34.0">
+                        <Label layoutY="83.0" text="Tambah Data" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="50.0">
                            <font>
                               <Font name="System Bold" size="15.0" />
                            </font>
                         </Label>
-                        <Label layoutX="4.0" layoutY="98.0" text="Pengaturan" AnchorPane.leftAnchor="4.0" AnchorPane.topAnchor="74.0">
+                        <Label layoutX="4.0" layoutY="98.0" text="Pengaturan" AnchorPane.leftAnchor="4.0" AnchorPane.topAnchor="98.0">
                            <font>
                               <Font name="System Bold" size="15.0" />
                            </font>
                         </Label>
-                        <Label layoutX="6.0" layoutY="125.0" text="Tentang" AnchorPane.leftAnchor="4.0" AnchorPane.topAnchor="94.0">
+                        <Label layoutX="6.0" layoutY="125.0" text="Tentang" AnchorPane.topAnchor="125.0">
                            <font>
                               <Font name="System Bold" size="15.0" />
                            </font>
                         </Label>
-                        <Label layoutX="8.0" layoutY="156.0" text="Keluar" AnchorPane.leftAnchor="4.0" AnchorPane.topAnchor="114.0">
+                        <Label layoutX="8.0" layoutY="156.0" text="Keluar" AnchorPane.topAnchor="156.0">
                            <font>
                               <Font name="System Bold" size="15.0" />
                            </font>
                         </Label>
-                        <Label layoutX="5.0" layoutY="71.0" text="Kategori" AnchorPane.leftAnchor="4.0" AnchorPane.topAnchor="54.0">
+                        <Label layoutX="5.0" layoutY="71.0" text="Kategori">
                            <font>
                               <Font name="System Bold" size="15.0" />
                            </font>
@@ -56,58 +56,52 @@
                   </ImageView>
                   <AnchorPane layoutX="165.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #CDEEAA;" AnchorPane.bottomAnchor="262.0" AnchorPane.leftAnchor="184.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
                      <children>
-                        <Label fx:id="namalbl" layoutX="115.0" layoutY="28.0" text="[Nama]">
+                        <Label fx:id="namalbl" layoutX="125.0" layoutY="28.0" text="[Nama]">
                            <font>
                               <Font name="System Bold" size="15.0" />
                            </font>
                         </Label>
-                        <Label layoutX="12.0" layoutY="28.0" text="Selamat Datang, " AnchorPane.leftAnchor="3.0">
+                        <Label layoutX="12.0" layoutY="28.0" text="Selamat Datang, " AnchorPane.leftAnchor="7.0">
                            <font>
                               <Font size="15.0" />
                            </font>
                         </Label>
-                        <ComboBox layoutX="216.0" layoutY="26.0" prefWidth="150.0" promptText="Cari" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="28.0" />
+                        <ComboBox layoutX="216.0" layoutY="26.0" prefWidth="150.0" promptText="Cari" AnchorPane.rightAnchor="2.0" />
                      </children>
                   </AnchorPane>
-                  <Label layoutX="206.0" layoutY="144.0" text="Nama" AnchorPane.leftAnchor="206.0" AnchorPane.topAnchor="144.0">
+                  <Label layoutX="206.0" layoutY="144.0" text="Nama">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="208.0" layoutY="176.0" text="Email" AnchorPane.leftAnchor="206.0" AnchorPane.topAnchor="174.0">
+                  <Label layoutX="208.0" layoutY="176.0" text="Email">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label fx:id="namalengkaplbl" layoutX="345.0" layoutY="146.0" text="[Nama]" AnchorPane.leftAnchor="345.0" AnchorPane.topAnchor="144.0">
+                  <Label fx:id="namalengkaplbl" layoutX="345.0" layoutY="146.0" text="[Nama]">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <Label fx:id="emaillbl" layoutX="347.0" layoutY="176.0" text="[Email]" AnchorPane.leftAnchor="345.0" AnchorPane.topAnchor="174.0">
+                  <Label fx:id="emaillbl" layoutX="347.0" layoutY="176.0" text="[Email]">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="204.0" layoutY="213.0" text="Tanggal Lahir" AnchorPane.leftAnchor="206.0" AnchorPane.topAnchor="204.0">
-                     <font>
-                        <Font size="14.0" />
-                     </font></Label>
-                  <Label fx:id="tgllbl" layoutX="344.0" layoutY="212.0" text="[Tanggal Lahir]" AnchorPane.leftAnchor="345.0" AnchorPane.topAnchor="204.0">
+                  <Label layoutX="204.0" layoutY="213.0" text="Tanggal Lahir" />
+                  <Label fx:id="tgllbl" layoutX="344.0" layoutY="212.0" text="[Tanggal Lahir]">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="205.0" layoutY="251.0" text="Jenis Kelamin" AnchorPane.leftAnchor="206.0" AnchorPane.topAnchor="234.0">
-                     <font>
-                        <Font size="14.0" />
-                     </font></Label>
-                  <Label fx:id="jklbl" layoutX="344.0" layoutY="250.0" text="[Jenis Kelamin]" AnchorPane.leftAnchor="345.0" AnchorPane.topAnchor="234.0">
+                  <Label layoutX="205.0" layoutY="251.0" text="Jenis Kelamin" />
+                  <Label fx:id="jklbl" layoutX="344.0" layoutY="250.0" text="[Jenis Kelamin]">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <Button fx:id="hapusbt" layoutX="194.0" layoutY="286.0" mnemonicParsing="false" onAction="#hapusbutton" text="Hapus Akun" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="275.0" />
+                  <Button fx:id="hapusbt" layoutX="191.0" layoutY="286.0" mnemonicParsing="false" onAction="#hapusbutton" text="Hapus Akun" />
                </children>
             </AnchorPane>
          </children>

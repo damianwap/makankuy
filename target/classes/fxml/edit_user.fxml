@@ -15,7 +15,40 @@
          <children>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #F4FF61;" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="12.0">
                <children>
-                  <AnchorPane layoutY="92.0" prefHeight="258.0" prefWidth="180.0" style="-fx-background-color: #CDEEAA;" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="370.0" AnchorPane.topAnchor="92.0" />
+                  <AnchorPane layoutY="92.0" prefHeight="258.0" prefWidth="180.0" style="-fx-background-color: #CDEEAA;" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="370.0" AnchorPane.topAnchor="92.0">
+                     <children>
+                        <Label layoutX="5.0" layoutY="47.0" text="Profil" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="25.0">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutY="83.0" text="Tambah Data" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="50.0">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="4.0" layoutY="98.0" text="Pengaturan" AnchorPane.leftAnchor="4.0" AnchorPane.topAnchor="98.0">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="6.0" layoutY="125.0" text="Tentang" AnchorPane.topAnchor="125.0">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="8.0" layoutY="156.0" text="Keluar" AnchorPane.topAnchor="156.0">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="5.0" layoutY="71.0" text="Kategori">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
                   <ImageView fitHeight="75.0" fitWidth="141.0" layoutX="214.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="263.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="214.26903533935547" AnchorPane.topAnchor="14.0">
                      <image>
                         <Image url="@../MakanKuy.png" />
@@ -23,34 +56,34 @@
                   </ImageView>
                   <AnchorPane layoutX="165.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #CDEEAA;" AnchorPane.bottomAnchor="262.0" AnchorPane.leftAnchor="184.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
                      <children>
-                        <Label layoutX="125.0" layoutY="28.0" text="[Nama]" AnchorPane.leftAnchor="116.0" AnchorPane.topAnchor="28.0">
+                        <Label layoutX="125.0" layoutY="28.0" text="[Nama]">
                            <font>
                               <Font name="System Bold" size="15.0" />
                            </font>
                         </Label>
-                        <Label layoutX="12.0" layoutY="28.0" text="Selamat Datang, " AnchorPane.leftAnchor="3.0">
+                        <Label layoutX="12.0" layoutY="28.0" text="Selamat Datang, " AnchorPane.leftAnchor="7.0">
                            <font>
                               <Font size="15.0" />
                            </font>
                         </Label>
-                        <ComboBox layoutX="216.0" layoutY="26.0" prefWidth="150.0" promptText="Cari" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="28.0" />
+                        <ComboBox layoutX="216.0" layoutY="26.0" prefWidth="150.0" promptText="Cari" AnchorPane.rightAnchor="2.0" />
                      </children>
                   </AnchorPane>
-                  <TextField fx:id="namabaru" layoutX="310.0" layoutY="120.0" AnchorPane.leftAnchor="310.0" AnchorPane.topAnchor="120.0" />
-                  <TextField fx:id="email" layoutX="311.0" layoutY="190.0" AnchorPane.leftAnchor="310.0" AnchorPane.topAnchor="155.0" />
-                  <TextField fx:id="passbaru" layoutX="311.0" layoutY="238.0" AnchorPane.leftAnchor="310.0" AnchorPane.topAnchor="190.0" />
-                  <Button fx:id="simpanbtn" layoutX="452.0" layoutY="290.0" mnemonicParsing="false" onAction="#simpanbutton" text="Simpan" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="235.0" />
-                  <Label layoutX="206.0" layoutY="144.0" text="Nama" AnchorPane.leftAnchor="188.0" AnchorPane.topAnchor="120.0">
+                  <TextField fx:id="namabaru" layoutX="311.0" layoutY="144.0" />
+                  <TextField fx:id="email" layoutX="311.0" layoutY="190.0" />
+                  <TextField fx:id="passbaru" layoutX="311.0" layoutY="238.0" />
+                  <Button fx:id="simpanbtn" layoutX="452.0" layoutY="290.0" mnemonicParsing="false" onAction="#simpanbutton" text="Simpan" />
+                  <Label layoutX="206.0" layoutY="144.0" text="Nama">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="208.0" layoutY="193.0" text="Email" AnchorPane.leftAnchor="188.0" AnchorPane.topAnchor="155.0">
+                  <Label layoutX="208.0" layoutY="193.0" text="Email">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="206.0" layoutY="241.0" text="Password" AnchorPane.leftAnchor="188.0" AnchorPane.topAnchor="190.0">
+                  <Label layoutX="206.0" layoutY="241.0" text="Password">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -59,35 +92,5 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <Label layoutX="34.0" layoutY="183.0" text="Kategori" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="170.0">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Label>
-      <Label layoutX="34.0" layoutY="249.0" text="Keluar" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="230.0">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Label>
-      <Label layoutX="34.0" layoutY="227.0" text="Tentang" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="210.0">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Label>
-      <Label layoutX="34.0" layoutY="205.0" text="Pengaturan" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="190.0">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Label>
-      <Label layoutX="34.0" layoutY="162.0" text="Tambah Data" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="150.0">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Label>
-      <Label layoutX="35.0" layoutY="141.0" text="Profil" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="130.0">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Label>
    </children>
 </AnchorPane>
