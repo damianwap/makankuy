@@ -18,7 +18,7 @@ public class Konek {
     public static Connection getConnect(){
         try{
             Class.forName("org.sqlite.JDBC");
-            conn = DriverManager.getConnection("jdbc:sqlite:D:\\TA_RPL\\MakanKuy.db");
+            conn = DriverManager.getConnection("jdbc:sqlite:C:\\Users\\user only\\Documents\\GitHub\\makankuy\\MakanKuy.db");
         }
         catch (Exception ex){
             ex.printStackTrace();
