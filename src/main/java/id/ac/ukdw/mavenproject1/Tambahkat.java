@@ -55,7 +55,7 @@ public class Tambahkat implements Initializable{
             JOptionPane.showMessageDialog(null, "BERHASIL INPUT");
             FXMLLoader loader=new FXMLLoader(getClass().getResource("/fxml/Home.fxml"));
                  Parent signin = (Parent) loader.load();
-                 Home hm=loader.getController();
+                 home hm=loader.getController();
                  hm.setnama(this.namalbl.getText());
                  Scene masuk = new Scene(signin);
                  Stage app_stage  = (Stage) ((Node) ae.getSource()).getScene().getWindow();
