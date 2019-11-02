@@ -17,7 +17,7 @@ import javafx.scene.control.ComboBox;
  *
  * @author DAMIAN
  */
-public class kategori implements Initializable{
+public class Kategori implements Initializable{
     @FXML
     private ComboBox<String> kategoricb;
     ObservableList<String> list = FXCollections.observableArrayList("aku","cantik");

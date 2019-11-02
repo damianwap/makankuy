@@ -76,7 +76,7 @@ public class EditKategori implements Initializable{
             JOptionPane.showMessageDialog(null, "berhasil update");
             FXMLLoader loader=new FXMLLoader(getClass().getResource("/fxml/Home.fxml"));
                  Parent signin = (Parent) loader.load();
-                 home hm=loader.getController();
+                 Home hm=loader.getController();
                  hm.setnama(this.namalbl.getText());
                  Scene masuk = new Scene(signin);
                  Stage app_stage  = (Stage) ((Node) ae.getSource()).getScene().getWindow();

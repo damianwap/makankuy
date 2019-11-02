@@ -32,7 +32,7 @@ import javafx.stage.Stage;
  *
  * @author DAMIAN
  */
-public class home implements Initializable {
+public class Home implements Initializable {
     @FXML
     private Label totalkalori, namalbl,kategorilbl,profillbl,keluarlbl;
     
