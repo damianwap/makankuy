@@ -32,7 +32,7 @@ import javafx.stage.Stage;
  *
  * @author DAMIAN
  */
-public class Home implements Initializable {
+public class home implements Initializable {
     @FXML
     private Label totalkalori, namalbl,kategorilbl,profillbl,keluarlbl;
     
@@ -87,7 +87,7 @@ public class Home implements Initializable {
         try{
             FXMLLoader loader=new FXMLLoader(getClass().getResource("/fxml/Kategori.fxml"));
             Parent signin = (Parent) loader.load();
-            TambahKatController hm=loader.getController();
+            TambahkatController hm=loader.getController();
             hm.setNama(this.namalbl.getText());
             Scene masuk = new Scene(signin);
             Stage app_stage  = (Stage) this.kategorilbl.getScene().getWindow();

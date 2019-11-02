@@ -10,8 +10,6 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import id.ac.ukdw.Koneksi.Konek;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -21,53 +19,72 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 /**
  *
  * @author DAMIAN
  */
-public class TambahKat implements Initializable{
+public class Hapuskategori implements Initializable{
 
     @FXML
     private Label namalbl;
     
-    
     @FXML
-    private TextField namakat;
-    
-    @FXML
-    private ComboBox pilihcb;
+    private ComboBox pilihjeniscb,pilihnamacb;
+    String pilihan;
     
     Connection conn;
-    ResultSet rs;
     Statement st;
+    ResultSet rs;
     
-    
-    public void tambahkat(ActionEvent ae){
-        String kat=namakat.getText();
-        String jenis=pilihcb.getValue().toString();
-        conn=Konek.getConnect();
-//        System.out.println("disini");
+    public void hapus(){
+        pilihnamacb.getItems().clear();
         try{
-            st=conn.createStatement();
-            st.executeUpdate("insert into kategori(id_user,nama_kat,jenis_kat) values((select user_id from user where nama='"+this.namalbl.getText()+"'),'"+kat+"','"+jenis+"')");
-            JOptionPane.showMessageDialog(null, "BERHASIL INPUT");
+        conn = Konek.getConnect();
+        st = conn.createStatement();
+             rs = st.executeQuery("select nama_kat from kategori where jenis_kat='"+this.pilihjeniscb.getValue().toString()+"'");
+             while(rs.next()){
+                 pilihnamacb.getItems().add(rs.getString("nama_kat"));
+             }
+   
+        }catch(Exception e){
+            e.printStackTrace();
+        }finally{
+            try{
+                conn.close();
+                rs.close();
+                st.close();
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+        }
+    }
+    
+    public void hapusbutton(ActionEvent ae){
+        conn = Konek.getConnect();
+        
+        
+        try{
+            st = conn.createStatement();
+            st.executeUpdate("delete from kategori where nama_kat='"+this.pilihnamacb.getValue().toString()+"'");
+            JOptionPane.showMessageDialog(null, "berhasil hapus");
             FXMLLoader loader=new FXMLLoader(getClass().getResource("/fxml/Home.fxml"));
                  Parent signin = (Parent) loader.load();
-                 Home hm=loader.getController();
+                 home hm=loader.getController();
                  hm.setnama(this.namalbl.getText());
                  Scene masuk = new Scene(signin);
                  Stage app_stage  = (Stage) ((Node) ae.getSource()).getScene().getWindow();
                  app_stage.close();
                  app_stage.setScene(masuk);
                  app_stage.show();
-                 
         }catch(Exception e){
-            e.printStackTrace();
+            
         }finally{
             try{
                 conn.close();
+                rs.close();
                 st.close();
             }catch(Exception e){
                 e.printStackTrace();
@@ -78,6 +95,7 @@ public class TambahKat implements Initializable{
     public void setnama(String nama){
         this.namalbl.setText(nama);
     }
+    
     @Override
     public void initialize(URL location, ResourceBundle resources) {
     }
