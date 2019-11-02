@@ -28,7 +28,7 @@ import javax.swing.JOptionPane;
  */
 public class Profil implements Initializable {
     @FXML
-    private Label namalbl,namalengkaplbl,emaillbl,tgllbl,jklbl;
+    private Label namalbl,namalengkaplbl,emaillbl,tgllbl,jklbl,keluarlbl,kategorilbl;
     
     Connection conn;
     Statement st;
@@ -81,6 +81,36 @@ public void settanggal(String nama){
 public void setjeniskel(String nama){
     this.jklbl.setText(nama);
 }
+
+public void kategori(){
+        try{
+            FXMLLoader loader=new FXMLLoader(getClass().getResource("/fxml/Kategori.fxml"));
+            Parent signin = (Parent) loader.load();
+            TambahKatController hm=loader.getController();
+            hm.setNama(this.namalbl.getText());
+            Scene masuk = new Scene(signin);
+            Stage app_stage  = (Stage) this.kategorilbl.getScene().getWindow();
+            app_stage.close();
+            app_stage.setScene(masuk);
+            app_stage.show();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+    
+    public void keluar(){
+        try{
+             FXMLLoader loader=new FXMLLoader(getClass().getResource("/fxml/Login.fxml"));
+                 Parent signin = (Parent) loader.load();
+                 Scene masuk = new Scene(signin);
+                 Stage app_stage  = (Stage) this.keluarlbl.getScene().getWindow();
+                 app_stage.close();
+                 app_stage.setScene(masuk);
+                 app_stage.show();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
