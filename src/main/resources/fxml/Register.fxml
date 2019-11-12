@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="id.ac.ukdw.mavenproject1.Register">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="id.ac.ukdw.mavenproject1.SignUp">
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: #CDEEAA;" />
       <AnchorPane layoutY="200.0" prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: #FFFA67;">
@@ -29,11 +30,16 @@
                         <TextField fx:id="emailtxt" layoutX="94.0" layoutY="102.0" promptText="Email" AnchorPane.bottomAnchor="189.0" AnchorPane.leftAnchor="94.0" AnchorPane.rightAnchor="94.0" AnchorPane.topAnchor="102.0" />
                         <PasswordField fx:id="passwordtxt" layoutX="94.0" layoutY="133.0" promptText="Password" AnchorPane.leftAnchor="94.0" AnchorPane.rightAnchor="94.0" AnchorPane.topAnchor="133.0" />
                         <DatePicker fx:id="tanggallahir" layoutX="94.0" layoutY="183.0" />
-                        <Label layoutX="95.0" layoutY="165.0" text="Tanggal Lahir" />
+                        <Label layoutX="95.0" layoutY="166.0" text="Tanggal Lahir" />
                         <RadioButton fx:id="pilih_lakilaki" layoutX="94.0" layoutY="232.0" mnemonicParsing="false" onMouseClicked="#selectlaki" text="Laki-laki" />
                         <RadioButton fx:id="pilih_perempuan" layoutX="169.0" layoutY="232.0" mnemonicParsing="false" onMouseClicked="#selectperempuan" text="Perempuan" />
                         <Label layoutX="98.0" layoutY="214.0" text="Jenis Kelamin" />
                         <Button fx:id="daftarbtn" layoutX="94.0" layoutY="262.0" mnemonicParsing="false" onAction="#regis" prefHeight="25.0" prefWidth="148.0" style="-fx-background-color: green;" text="Daftar" textFill="WHITE" AnchorPane.leftAnchor="94.0" AnchorPane.rightAnchor="94.0" />
+                        <Label fx:id="loginlbl" layoutX="155.0" layoutY="294.0" onMousePressed="#login" text="Login">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
                      </children>
                   </AnchorPane>
                </children>
