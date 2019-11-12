@@ -18,7 +18,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 
@@ -28,7 +30,13 @@ import javax.swing.JOptionPane;
  */
 public class Profil implements Initializable {
     @FXML
-    private Label namalbl,namalengkaplbl,emaillbl,tgllbl,jklbl;
+    private Label namalbl,namalengkaplbl,emaillbl,tgllbl,jklbl,tambahdatalbl,kategorilbl,keluarlbl;
+    
+    @FXML
+    private Button edit_user;
+    
+    @FXML
+    private ImageView logo_makankuy;
     
     Connection conn;
     Statement st;
@@ -36,6 +44,7 @@ public class Profil implements Initializable {
     
     public void hapusbutton(ActionEvent ae){
          conn = Konek.getConnect();
+         System.out.println("sampe hapus");
         
         
         try{
@@ -62,25 +71,104 @@ public class Profil implements Initializable {
         }
     }
 
-public void setnama(String nama){
-        this.namalbl.setText(nama);
+    public void setnama(String nama){
+            this.namalbl.setText(nama);
+        }
+
+    public void setnamalengkap(String nama){
+        this.namalengkaplbl.setText(nama);
     }
 
-public void setnamalengkap(String nama){
-    this.namalengkaplbl.setText(nama);
-}
+    public void setemail(String nama){
+        this.emaillbl.setText(nama);
+    }
 
-public void setemail(String nama){
-    this.emaillbl.setText(nama);
-}
+    public void edituser(){
+        try{
+            FXMLLoader loader=new FXMLLoader(getClass().getResource("/fxml/Edit_User.fxml"));
+            Parent signin = (Parent) loader.load();
+            Edit_User hm=loader.getController();
+            System.out.println("sampe edituser");
+            hm.setnama(this.namalbl.getText());
+            Scene masuk = new Scene(signin);
+            Stage app_stage  = (Stage) this.edit_user.getScene().getWindow();
+            app_stage.close();
+            app_stage.setScene(masuk);
+            app_stage.show();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
 
-public void settanggal(String nama){
-    this.tgllbl.setText(nama);
-}
+    public void settanggal(String nama){
+        this.tgllbl.setText(nama);
+    }
 
-public void setjeniskel(String nama){
-    this.jklbl.setText(nama);
-}
+    public void setjeniskel(String nama){
+        this.jklbl.setText(nama);
+    }
+
+    public void tambahdata(){
+        try{
+            FXMLLoader loader=new FXMLLoader(getClass().getResource("/fxml/TambahMakanMinum.fxml"));
+            Parent signin = (Parent) loader.load();
+            TambahMakanMinum hm=loader.getController();
+            hm.setnama(this.namalbl.getText());
+            Scene masuk = new Scene(signin);
+            Stage app_stage  = (Stage) this.tambahdatalbl.getScene().getWindow();
+            app_stage.close();
+            app_stage.setScene(masuk);
+            app_stage.show();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+    
+    public void kategori() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Kategori.fxml"));
+            Parent signin = (Parent) loader.load();
+            Kategori hm = loader.getController();
+            hm.setNama(this.namalbl.getText());
+            Scene masuk = new Scene(signin);
+            Stage app_stage = (Stage) this.kategorilbl.getScene().getWindow();
+            app_stage.close();
+            app_stage.setScene(masuk);
+            app_stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public void home(){
+        try{
+            FXMLLoader loader=new FXMLLoader(getClass().getResource("/fxml/Home.fxml"));
+            Parent signin = (Parent) loader.load();
+            Home hm=loader.getController();
+            hm.setnama(this.namalbl.getText());
+            Scene masuk = new Scene(signin);
+            Stage app_stage  = (Stage) this.logo_makankuy.getScene().getWindow();
+            app_stage.close();
+            app_stage.setScene(masuk);
+            app_stage.show();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+    
+    public void keluar() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Login.fxml"));
+            Parent signin = (Parent) loader.load();
+            Scene masuk = new Scene(signin);
+            Stage app_stage = (Stage) this.keluarlbl.getScene().getWindow();
+            app_stage.close();
+            app_stage.setScene(masuk);
+            app_stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
