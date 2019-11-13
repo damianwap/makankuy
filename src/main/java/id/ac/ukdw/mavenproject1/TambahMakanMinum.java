@@ -54,7 +54,7 @@ public class TambahMakanMinum {
         try {
             conn = Konek.getConnect();
             st = conn.createStatement();
-            rs = st.executeQuery("select nama_kat from kategori where jenis_kat='"+this.pilihcb.getValue().toString()+"'");
+            rs = st.executeQuery("select distinct nama_kat from kategori where jenis_kat='"+this.pilihcb.getValue().toString()+"'");
             while(rs.next()){
                 pilihnama.getItems().add(rs.getString("nama_kat"));
             }

@@ -57,7 +57,7 @@ public class EditKategori{
         try{
         conn = Konek.getConnect();
         st = conn.createStatement();
-             rs = st.executeQuery("select nama_kat from kategori where jenis_kat='"+this.pilihjeniscb.getValue().toString()+"'");
+             rs = st.executeQuery("select distinct nama_kat from kategori where jenis_kat='"+this.pilihjeniscb.getValue().toString()+"'");
              while(rs.next()){
                  pilihnamacb.getItems().add(rs.getString("nama_kat"));
              }

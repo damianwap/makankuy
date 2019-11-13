@@ -59,7 +59,7 @@ public class InputMakan {
         try {
             conn = Konek.getConnect();
             st = conn.createStatement();
-            rs = st.executeQuery("select * from tambah_makan_minum where jenis_kat='"+this.pilihcb.getValue().toString()+"'");
+            rs = st.executeQuery("select distinct nama_kat from tambah_makan_minum where jenis_kat='"+this.pilihcb.getValue().toString()+"'");
             while(rs.next()){
                 pilihnamacb.getItems().add(rs.getString("nama_kat"));
             }
@@ -85,11 +85,11 @@ public class InputMakan {
     }
     
     public void pilihnama(){
-       
+       pilihmakancb.getItems().clear();
         try {
             conn = Konek.getConnect();
             st = conn.createStatement();
-            rs = st.executeQuery("select * from tambah_makan_minum where nama_kat='"+this.pilihnamacb.getValue().toString()+"'");
+            rs = st.executeQuery("select distinct nama_makan_minum from tambah_makan_minum where nama_kat='"+this.pilihnamacb.getValue().toString()+"'");
             while(rs.next()){
                 pilihmakancb.getItems().add(rs.getString("nama_makan_minum"));
             }

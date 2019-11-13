@@ -70,7 +70,6 @@ public class Edit_User {
                    st.executeUpdate();
                    
                    JOptionPane.showMessageDialog(null, "Update data sukses");
-                   System.out.println("ssss");
             //}
         }catch(Exception e){
             
