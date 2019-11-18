@@ -35,22 +35,22 @@
                               <Font name="System Bold" size="15.0" />
                            </font>
                         </Label>
-                        <Label fx:id="pengaturanlbl" layoutX="5.0" layoutY="94.0" onMousePressed="#editprofil" text="Pengaturan" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="94.0">
+                        <Label fx:id="pengaturanlbl" layoutX="5.0" layoutY="94.0" onMousePressed="#editprofil" text="Pengaturan" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="100.0">
                            <font>
                               <Font name="System Bold" size="15.0" />
                            </font>
                         </Label>
-                        <Label fx:id="tentanglbl" layoutX="5.0" layoutY="116.0" onMousePressed="#tentang" text="Tentang" AnchorPane.topAnchor="116.0">
+                        <Label fx:id="tentanglbl" layoutX="5.0" layoutY="116.0" onMousePressed="#tentang" text="Tentang" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="125.0">
                            <font>
                               <Font name="System Bold" size="15.0" />
                            </font>
                         </Label>
-                        <Label fx:id="keluarlbl" layoutX="5.0" layoutY="140.0" onMousePressed="#keluar" text="Keluar" AnchorPane.topAnchor="140.0">
+                        <Label fx:id="keluarlbl" layoutX="5.0" layoutY="140.0" onMousePressed="#keluar" text="Keluar" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="150.0">
                            <font>
                               <Font name="System Bold" size="15.0" />
                            </font>
                         </Label>
-                        <Label fx:id="kategorilbl" layoutX="5.0" layoutY="71.0" onMousePressed="#kategori" text="Kategori">
+                        <Label fx:id="kategorilbl" layoutX="5.0" layoutY="71.0" onMousePressed="#kategori" text="Kategori" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="75.0">
                            <font>
                               <Font name="System Bold" size="15.0" />
                            </font>

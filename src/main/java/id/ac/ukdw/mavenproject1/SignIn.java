@@ -67,7 +67,7 @@ public void login(ActionEvent aksi) throws IOException, ClassNotFoundException, 
 //         System.out.println(password);
          if(rs.next()){
              if(password.equals(rs.getString("Password"))){
-                 JOptionPane.showMessageDialog(null, "Selamat Datang," + rs.getString("nama"));
+                 JOptionPane.showMessageDialog(null, "Selamat Datang, " + rs.getString("nama"));
                  FXMLLoader loader=new FXMLLoader(getClass().getResource("/fxml/Home.fxml"));
                  Parent signin = (Parent) loader.load();
                  Home hm=loader.getController();
