@@ -14,18 +14,23 @@ public class Tabel {
        private String no;
        private String nama_makanan;
        private String kategori;
+       private String pilih_kat;
        private String tanggal;
        private String kalori;
        private String porsi;
+       private String waktu;
        
-    public Tabel (String id_tabel,String no, String nama_makanan, String kategori, String tanggal, String kalori, String porsi){
+    public Tabel (String id_tabel,String no, String nama_makanan, String kategori,String pilih_kat, String tanggal, String kalori, String porsi, String waktu){
         this.id_tabel = id_tabel;
         this.no=no;
         this.nama_makanan = nama_makanan;
         this.kategori = kategori;
+        this.pilih_kat = pilih_kat;
         this.tanggal = tanggal;
         this.kalori = kalori;
         this.porsi = porsi;
+       this.waktu = waktu;
+        
     }
 
     Tabel() {
@@ -88,6 +93,39 @@ public class Tabel {
     public void setPorsi(String porsi) {
         this.porsi = porsi;
     }
+    
+
+    /**
+     * @return the pilih_kat
+     */
+    public String getPilih_kat() {
+        return pilih_kat;
+    }
+
+    /**
+     * @param pilih_kat the pilih_kat to set
+     */
+    public void setPilih_kat(String pilih_kat) {
+        this.pilih_kat = pilih_kat;
+    }
+
+    /**
+     * @return the waktu
+     */
+    public String getWaktu() {
+        return waktu;
+    }
+
+    /**
+     * @param waktu the waktu to set
+     */
+    public void setWaktu(String waktu) {
+        this.waktu = waktu;
+    }
+
+
+
+  
        
        
 }

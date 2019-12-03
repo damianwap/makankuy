@@ -20,6 +20,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+import javafx.scene.control.Spinner;
+import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
@@ -30,13 +32,13 @@ import javafx.stage.Stage;
  */
 public class InputMakan {
     @FXML
-    private Label profillbl, namalbl, keluarlbl, tambahdatalbl, kategorilbl;
+    private Label profillbl, namalbl, keluarlbl, tambahdatalbl, kategorilbl, grafiklbl;
     
     @FXML
-    private ComboBox pilihcb, pilihnamacb, pilihmakancb;
+    private ComboBox pilihcb, pilihnamacb, pilihmakancb, jamcb, menitcb;
     
     @FXML
-    private TextField porsi;
+    private TextField porsi, kalori_makan;
     
     @FXML
     private Button tambahmakanbtn;
@@ -46,6 +48,9 @@ public class InputMakan {
     
     @FXML
     private ImageView logo_makankuy;
+    
+
+    
     
     
     
@@ -145,6 +150,24 @@ public class InputMakan {
         }
     }
     
+    public void grafik() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Grafik.fxml"));
+            Parent signin = (Parent) loader.load();
+            Grafik hm = loader.getController();
+            System.out.println("sampe sini");
+            hm.setnama(this.namalbl.getText());
+            hm.tampilgrafik();
+            Scene masuk = new Scene(signin);
+            Stage app_stage = (Stage) this.grafiklbl.getScene().getWindow();
+            app_stage.close();
+            app_stage.setScene(masuk);
+            app_stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
     public void profil() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Profil.fxml"));
@@ -184,12 +207,20 @@ public class InputMakan {
         String kat = pilihnamacb.getValue().toString();
         String namamakan = pilihmakancb.getValue().toString();
         String tanggal = tglinput.getValue().toString();
-        
+        String kal  = kalori_makan.getText();
+        String jenis = pilihcb.getValue().toString();
+        String jam_makan = jamcb.getValue().toString();
+        String menit_makan = menitcb.getValue().toString();
+        String waktu_makan = jam_makan+":"+menit_makan;
+       
         conn = Konek.getConnect();
         try {
+           //  SpinnerValueFactory<Integer> sm = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 100, 75);
+ 
             st = conn.createStatement();
-            System.out.println("insert into data_makan_minum (id_user, nama_makan_minum, kategori, tanggal, id_kalori,porsi) values ((select user_id from user where nama = '"+this.namalbl.getText()+"'), '"+namamakan+"', '"+kat+"', '"+tanggal+"',(select id_kalori from kalori where nama_makanan='"+this.pilihmakancb.getValue().toString()+"'),'"+por+"' )");
-            st.executeUpdate("insert into data_makan_minum (id_user, nama_makan_minum, kategori, tanggal, id_kalori,porsi) values ((select user_id from user where nama = '"+this.namalbl.getText()+"'), '"+namamakan+"', '"+kat+"', '"+tanggal+"',(select id_kalori from kalori where nama_makanan='"+this.pilihmakancb.getValue().toString()+"'),'"+por+"' )");
+       
+          st.executeUpdate("insert into data_makan_minum (id_user, email, nama_makan_minum, kategori, jenis_kat, tanggal, kalori, porsi, jam, menit, waktu) values ((select user_id from user where nama = '"+this.namalbl.getText()+"'), (select email from user where nama = '"+this.namalbl.getText()+"'), '"+namamakan+"', '"+kat+"', '"+jenis+"', '"+tanggal+"', '"+kal+"', '"+por+"', '"+jam_makan+"', '"+menit_makan+"', '"+waktu_makan+"' )");
+            System.out.println("uhuy");
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setHeaderText("berhasil uhuy!!!!");
             alert.showAndWait();

@@ -27,6 +27,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Alert;
 import static javafx.scene.control.Alert.AlertType.INFORMATION;
 import javafx.scene.control.Button;
@@ -54,10 +56,10 @@ import javafx.stage.Stage;
 public class Home implements Initializable {
 
     @FXML
-    private Label totalkalori, namalbl, kategorilbl, profillbl, keluarlbl, pengaturanlbl, tambahdatalbl;
+    private Label totalkalori, namalbl, kategorilbl, profillbl, keluarlbl, grafiklbl, tambahdatalbl;
 
     @FXML
-    private TableColumn <Tabel, String> nomortbl, namamakantbl, kategoritbl, tanggaltbl, kaloritbl;
+    private TableColumn <Tabel, String> nomortbl, namamakantbl, kategoritbl, jenis_kat, tanggaltbl, kaloritbl, porsitbl, waktutbl;
     
     @FXML
     private TableView <Tabel> datatbl;
@@ -68,6 +70,8 @@ public class Home implements Initializable {
     @FXML
     private TextField fieldcari;
     
+    
+    
     private Alert EditDataMakanMinum;
     
     String nama_makan_minum;
@@ -75,13 +79,16 @@ public class Home implements Initializable {
     Connection conn;
     Statement st;
     ResultSet rs;
-
+    ResultSet rs2;
     public void initialize(URL location, ResourceBundle resources) {
         nomortbl.setCellValueFactory(new PropertyValueFactory("no"));
         namamakantbl.setCellValueFactory(new PropertyValueFactory("nama_makanan"));
         kategoritbl.setCellValueFactory(new PropertyValueFactory("kategori"));
+        jenis_kat.setCellValueFactory(new PropertyValueFactory("pilih_kat"));
         tanggaltbl.setCellValueFactory(new PropertyValueFactory("tanggal"));
         kaloritbl.setCellValueFactory(new PropertyValueFactory("kalori"));
+        porsitbl.setCellValueFactory(new PropertyValueFactory("porsi"));
+        waktutbl.setCellValueFactory(new PropertyValueFactory("waktu"));
         
         
         
@@ -144,20 +151,38 @@ public class Home implements Initializable {
      * @param aksi
      */
     private String nama;
+    private String kalori;
 
     public void getNama(String nama) {
         this.nama = nama;
         namalbl.setText("SELECT nama from user WHERE email = '" + nama + "'");
     }
+    
+    public void getKal(String kalori){
+         conn = Konek.getConnect();
+         int tamp = 0;
+         
+         try{
+             st = conn.createStatement();
+             rs = st.executeQuery("SELECT * FROM data_makan_minum where id_user = (select user_id from user where nama = '"+this.namalbl.getText()+"')");
+             while(rs.next()){
+                 tamp = tamp + Integer.parseInt(rs.getString("kalori"))*Integer.parseInt(rs.getString("porsi"));
+             }
+             totalkalori.setText(String.valueOf(tamp)+" kal");
+         }catch(Exception e){
+             
+         }
+    }
+    
+    
 
     
     public void isitabel(){
         conn=Konek.getConnect();
         try{
             st = conn.createStatement();
-            rs = st.executeQuery("select * from data_makan_minum inner join kalori on data_makan_minum.id_kalori=kalori.id_kalori where id_user=(select user_id from user where nama='"+this.namalbl.getText()+"')");
+            rs = st.executeQuery("select * from data_makan_minum where id_user=(select user_id from user where nama='"+this.namalbl.getText()+"')");
             int i=1;
-            System.out.println(rs.getString("nama_makan_minum"));
             ObservableList<Tabel> isi=FXCollections.observableArrayList(); //nampung data dari tabel
             
             while(rs.next()){
@@ -166,9 +191,11 @@ public class Home implements Initializable {
                         String.valueOf(i++),
                         rs.getString("nama_makan_minum"),
                         rs.getString("kategori"),
+                        rs.getString("jenis_kat"),
                         rs.getString("tanggal"),
-                        rs.getString("jumlah_kalori"),
-                        rs.getString("porsi")
+                        rs.getString("kalori"),
+                        rs.getString("porsi"),
+                        rs.getString("waktu")
                 ));
             }
             this.datatbl.setItems(isi);
@@ -189,7 +216,6 @@ public class Home implements Initializable {
         try {
             st = conn.createStatement();
             rs = st.executeQuery("SELECT nama from user WHERE email = '" + email + "'");
-            System.out.println("SELECT nama from user WHERE email = '" + email + "'");
         } catch (Exception e) {
 
             e.printStackTrace();
@@ -207,7 +233,15 @@ public class Home implements Initializable {
     public void setnama(String nama) {
         this.namalbl.setText(nama);
         isitabel();
+        getKal("kalori");
     }
+    
+    public void setKal(String kalori){
+        this.totalkalori.setText(kalori);
+        
+    }
+    
+   
     
       private void openFormMakan(boolean update, final Tabel makan){
         try{  
@@ -318,14 +352,15 @@ public class Home implements Initializable {
         }
     }
 
-    public void editprofil() {
+    public void grafik() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Edit_User.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Grafik.fxml"));
             Parent signin = (Parent) loader.load();
-            Edit_User hm = loader.getController();
-            hm.setNama(this.namalbl.getText());
+            Grafik hm = loader.getController();
+            hm.setnama(this.namalbl.getText());
+            hm.tampilgrafik();
             Scene masuk = new Scene(signin);
-            Stage app_stage = (Stage) this.pengaturanlbl.getScene().getWindow();
+            Stage app_stage = (Stage) this.grafiklbl.getScene().getWindow();
             app_stage.close();
             app_stage.setScene(masuk);
             app_stage.show();
@@ -361,8 +396,6 @@ public class Home implements Initializable {
             conn = Konek.getConnect();
             st = conn.createStatement();
             rs = st.executeQuery("Select * from user where nama='" + this.namalbl.getText() + "'");
-            System.out.println("sampe sini");
-
             hm.setnama(this.namalbl.getText());
             hm.setemail(rs.getString("email"));
             hm.setjeniskel(rs.getString("Jenis_kelamin"));
@@ -389,11 +422,10 @@ public class Home implements Initializable {
     public void cari(){
         try{
             conn = Konek.getConnect();
-            st = conn.createStatement();
-            System.out.println("select * from data_makan_minum inner join kalori on data_makan_minum.id_kalori=kalori.id_kalori where id_user=(select user_id from user where nama='"+this.namalbl.getText()+"') and nama_makan_minum like '%"+this.fieldcari.getText()+"%'");
-            rs = st.executeQuery("select * from data_makan_minum inner join kalori on data_makan_minum.id_kalori=kalori.id_kalori where id_user=(select user_id from user where nama='"+this.namalbl.getText()+"') and nama_makan_minum like '%"+this.fieldcari.getText()+"%'");
+            st = conn.createStatement();   
+            rs = st.executeQuery("select * from data_makan_minum where id_user=(select user_id from user where nama='"+this.namalbl.getText()+"') and nama_makan_minum like '%"+this.fieldcari.getText()+"%'");
             int i=1;
-//            System.out.println(rs.getString("nama_makan_minum"));
+
             ObservableList<Tabel> isi=FXCollections.observableArrayList(); //nampung data dari tabel
             
             while(rs.next()){
@@ -402,9 +434,11 @@ public class Home implements Initializable {
                         String.valueOf(i++),
                         rs.getString("nama_makan_minum"),
                         rs.getString("kategori"),
+                        rs.getString("jenis_kat"),
                         rs.getString("tanggal"),
-                        rs.getString("jumlah_kalori"),
-                        rs.getString("porsi")
+                        rs.getString("kalori"),
+                        rs.getString("porsi"),
+                        rs.getString("waktu")
                 ));
             }
             this.datatbl.setItems(isi);

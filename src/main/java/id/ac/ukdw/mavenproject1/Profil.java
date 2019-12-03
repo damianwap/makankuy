@@ -30,7 +30,7 @@ import javax.swing.JOptionPane;
  */
 public class Profil implements Initializable {
     @FXML
-    private Label namalbl,namalengkaplbl,emaillbl,tgllbl,jklbl,tambahdatalbl,kategorilbl,keluarlbl;
+    private Label namalbl,namalengkaplbl,emaillbl,tgllbl,jklbl,tambahdatalbl,kategorilbl,keluarlbl,totalkalori, grafiklbl;
     
     @FXML
     private Button edit_user;
@@ -74,6 +74,10 @@ public class Profil implements Initializable {
     public void setnama(String nama){
             this.namalbl.setText(nama);
         }
+    
+    public void setKal(String kalori){
+        this.totalkalori.setText(kalori);
+    }
 
     public void setnamalengkap(String nama){
         this.namalengkaplbl.setText(nama);
@@ -82,7 +86,7 @@ public class Profil implements Initializable {
     public void setemail(String nama){
         this.emaillbl.setText(nama);
     }
-
+    
     public void edituser(){
         try{
             FXMLLoader loader=new FXMLLoader(getClass().getResource("/fxml/Edit_User.fxml"));
@@ -102,6 +106,24 @@ public class Profil implements Initializable {
 
     public void settanggal(String nama){
         this.tgllbl.setText(nama);
+    }
+    
+    public void grafik() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Grafik.fxml"));
+            Parent signin = (Parent) loader.load();
+            Grafik hm = loader.getController();
+            System.out.println("sampe sini");
+            hm.setnama(this.namalbl.getText());
+            hm.tampilgrafik();
+            Scene masuk = new Scene(signin);
+            Stage app_stage = (Stage) this.grafiklbl.getScene().getWindow();
+            app_stage.close();
+            app_stage.setScene(masuk);
+            app_stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void setjeniskel(String nama){
@@ -146,6 +168,7 @@ public class Profil implements Initializable {
             Parent signin = (Parent) loader.load();
             Home hm=loader.getController();
             hm.setnama(this.namalbl.getText());
+//            hm.setKal(this.totalkalori.getText());
             Scene masuk = new Scene(signin);
             Stage app_stage  = (Stage) this.logo_makankuy.getScene().getWindow();
             app_stage.close();

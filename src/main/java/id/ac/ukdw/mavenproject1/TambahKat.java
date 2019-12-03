@@ -31,7 +31,7 @@ import javax.swing.JOptionPane;
 public class TambahKat implements Initializable{
 
     @FXML
-    private Label namalbl,tambahdatalbl,kategorilbl,profillbl,keluarlbl;
+    private Label namalbl,tambahdatalbl,kategorilbl,profillbl,keluarlbl,grafiklbl;
     
     
     @FXML
@@ -125,6 +125,24 @@ public class TambahKat implements Initializable{
             app_stage.setScene(masuk);
             app_stage.show();
         }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+    
+    public void grafik() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Grafik.fxml"));
+            Parent signin = (Parent) loader.load();
+            Grafik hm = loader.getController();
+            System.out.println("sampe sini");
+            hm.setnama(this.namalbl.getText());
+            hm.tampilgrafik();
+            Scene masuk = new Scene(signin);
+            Stage app_stage = (Stage) this.grafiklbl.getScene().getWindow();
+            app_stage.close();
+            app_stage.setScene(masuk);
+            app_stage.show();
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

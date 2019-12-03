@@ -54,29 +54,36 @@ Connection conn;
 Statement st;
 
 ResultSet rs;
-
+ResultSet rs2;
 public void login(ActionEvent aksi) throws IOException, ClassNotFoundException, SQLException{
      conn = Konek.getConnect();
      String email = emailtxt.getText();
      String password = passwordtxt.getText();
      
+     
      try{
          st = conn.createStatement();
          rs = st.executeQuery("SELECT * from user WHERE email = '"+email+"'");
-
-//         System.out.println(password);
          if(rs.next()){
              if(password.equals(rs.getString("Password"))){
+//                 conn = Konek.getConnect();
+//                 st = conn.createStatement();
+//                 rs = st.executeQuery("SELECT * from data_makan_minum WHERE email = '"+email+"'");              
                  JOptionPane.showMessageDialog(null, "Selamat Datang, " + rs.getString("nama"));
                  FXMLLoader loader=new FXMLLoader(getClass().getResource("/fxml/Home.fxml"));
                  Parent signin = (Parent) loader.load();
                  Home hm=loader.getController();
                  hm.setnama(rs.getString("nama"));
+                 rs2 = st.executeQuery("SELECT * from data_makan_minum");
+                 hm.getKal("kalori");
+                 System.out.println("select sum (kalori * porsi) from data_makan_minum WHERE email = '"+email+"'");
                  Scene masuk = new Scene(signin);
                  Stage app_stage  = (Stage) ((Node) aksi.getSource()).getScene().getWindow();
                  app_stage.close();
                  app_stage.setScene(masuk);
                  app_stage.show();
+                 
+                 
                  
              }else{
                  JOptionPane.showMessageDialog(null, "Email atau password salah!");

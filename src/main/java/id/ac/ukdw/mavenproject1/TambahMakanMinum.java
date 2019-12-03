@@ -40,7 +40,7 @@ public class TambahMakanMinum {
     private Button tambahbtn;
     
     @FXML 
-    private Label namalbl, profillbl, kategorilbl, keluarlbl;
+    private Label namalbl, profillbl, kategorilbl, keluarlbl, grafiklbl;
     
     @FXML
     private ImageView logo_makankuy;
@@ -71,7 +71,7 @@ public class TambahMakanMinum {
         try {
             st = conn.createStatement();
             st.executeUpdate("insert into tambah_makan_minum (id_user, jenis_kat, nama_kat, nama_makan_minum) values((select user_id from user where nama = '"+this.namalbl.getText()+"'), '"+kat+"','"+jenis+"', '"+namamakan+"')");
-            System.out.println("insert into tambah_makan_minum (id_user, jenis_kat, nama_kat, nama_makan_minum) values((select user_id from user where nama = '"+this.namalbl.getText()+"'), '"+kat+"','"+jenis+"', '"+namamakan+"')");
+           // System.out.println("insert into tambah_makan_minum (id_user, jenis_kat, nama_kat, nama_makan_minum) values((select user_id from user where nama = '"+this.namalbl.getText()+"'), '"+kat+"','"+jenis+"', '"+namamakan+"')");
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setHeaderText("Berhasil yo");
             alert.showAndWait();
@@ -127,6 +127,24 @@ public class TambahMakanMinum {
             app_stage.setScene(masuk);
             app_stage.show();
         }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+    
+    public void grafik() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Grafik.fxml"));
+            Parent signin = (Parent) loader.load();
+            Grafik hm = loader.getController();
+            System.out.println("sampe sini");
+            hm.setnama(this.namalbl.getText());
+            hm.tampilgrafik();
+            Scene masuk = new Scene(signin);
+            Stage app_stage = (Stage) this.grafiklbl.getScene().getWindow();
+            app_stage.close();
+            app_stage.setScene(masuk);
+            app_stage.show();
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
