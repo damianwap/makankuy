@@ -52,7 +52,7 @@ public class CRUD {
         }
         
         public static void update(String id_makan_minum, Tabel makan) throws SQLException, ClassNotFoundException{
-            String sql = "update data_makan_minum set nama_makan_minum = '" + makan.getNama_makanan() + "'," + "kategori = '" + makan.getKategori().toString() + "'," + "tanggal = '" + makan.getTanggal().toString() + "'," + "porsi = '"+makan.getPorsi()+"'where id_makan_minum='" + makan.getId_tabel() + "'";
+            String sql = "update data_makan_minum set nama_makan_minum = '" + makan.getNama_makanan() + "'," + "kategori = '" + makan.getKategori().toString() + "'," + "tanggal = '" + makan.getTanggal().toString() + "'," + "porsi = '"+makan.getPorsi()+"',waktu='"+makan.getWaktu()+"',jam='"+makan.getWaktu().substring(0, 2)+"', menit='"+makan.getWaktu().substring(3, 5)+"' where id_makan_minum='" + makan.getId_tabel() + "'";
             System.out.println(sql);
             try{
                 Konek.getConnect().createStatement().executeUpdate(sql);
@@ -62,7 +62,7 @@ public class CRUD {
         }
         
         public static void tambahMakan(Tabel makan)throws SQLException, ClassNotFoundException{
-            String sql = "insert into data_makan_minum(nama_makan_minum, kategori, tanggal, porsi) values ('"+makan.getNama_makanan()+"', " + "'" +makan.getKategori().toString()+ "', "+"'"+makan.getTanggal().toString()+"', "+ "'"+makan.getPorsi()+"')";
+            String sql = "insert into data_makan_minum(nama_makan_minum, kategori, jenis_kat, tanggal, porsi) values ('"+makan.getNama_makanan()+"', " + "'" +makan.getKategori().toString()+ "'," + "'"+makan.getPilih_kat()+"' "+"'"+makan.getTanggal().toString()+"', "+ "'"+makan.getPorsi()+"')";
             System.out.println(sql);
             try {
                Konek.getConnect().createStatement().executeUpdate(sql);
@@ -80,6 +80,7 @@ public class CRUD {
            makan.setKalori("kalori");
            makan.setTanggal("tanggal");
            makan.setPorsi("porsi");
+           makan.setWaktu("waktu");
        }
        return makan;
        

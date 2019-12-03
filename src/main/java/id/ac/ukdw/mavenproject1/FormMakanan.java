@@ -28,11 +28,12 @@ public class FormMakanan implements Initializable {
     private TextField namabaru, porsibaru;
     
     @FXML
-    private ComboBox katbaru;
+    private ComboBox katbaru,jamcb_baru,menitcb_baru;
     
     @FXML
     private DatePicker tanggalbaru;
     
+   
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -47,6 +48,10 @@ public class FormMakanan implements Initializable {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
         Date tanggalbaru = format.parse(makanOld.getTanggal());
         this.tanggalbaru.setValue(tanggalbaru.toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
+        int jam=Integer.valueOf(makanOld.getWaktu().substring(0, 2));
+        int menit=Integer.valueOf(makan.getWaktu().substring(3, 5));
+        this.jamcb_baru.setValue(jam);
+        this.menitcb_baru.setValue(menit);
     }
     
     public Tabel getTabel(){
@@ -54,6 +59,7 @@ public class FormMakanan implements Initializable {
         this.makan.setKategori(katbaru.getValue().toString());
         this.makan.setPorsi(porsibaru.getText());
         this.makan.setTanggal(tanggalbaru.getValue().toString());
+        this.makan.setWaktu(jamcb_baru.getValue()+":"+menitcb_baru.getValue());
         return this.makan;
     }
    
