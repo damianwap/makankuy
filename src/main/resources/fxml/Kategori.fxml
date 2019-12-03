@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="id.ac.ukdw.mavenproject1.Kategori">
+<AnchorPane prefHeight="650.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="id.ac.ukdw.mavenproject1.Kategori">
    <children>
       <AnchorPane layoutX="41.0" layoutY="29.0" prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: #CDEEAA;" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <AnchorPane layoutX="51.0" layoutY="39.0" prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: #FFFA67;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="200.0" />
@@ -19,7 +19,7 @@
          <children>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #F4FF61;" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="12.0">
                <children>
-                  <AnchorPane layoutY="92.0" prefHeight="258.0" prefWidth="180.0" style="-fx-background-color: #CDEEAA;" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="370.0" AnchorPane.topAnchor="92.0">
+                  <AnchorPane layoutY="92.0" prefHeight="508.0" prefWidth="183.0" style="-fx-background-color: #CDEEAA;" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="767.0" AnchorPane.topAnchor="92.0">
                      <children>
                         <Label fx:id="profillbl" layoutX="5.0" layoutY="47.0" onMousePressed="#profil" text="Profil" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="25.0">
                            <font>
@@ -31,7 +31,7 @@
                               <Font name="System Bold" size="15.0" />
                            </font>
                         </Label>
-                        <Label layoutX="4.0" layoutY="98.0" text="Pengaturan" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="100.0">
+                        <Label fx:id="grafiklbl" layoutX="4.0" layoutY="98.0" onMousePressed="#grafik" text="Grafik" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="100.0">
                            <font>
                               <Font name="System Bold" size="15.0" />
                            </font>
@@ -58,7 +58,7 @@
                         <Image url="@MakanKuy.png" />
                      </image>
                   </ImageView>
-                  <AnchorPane layoutX="165.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #CDEEAA;" AnchorPane.bottomAnchor="262.0" AnchorPane.leftAnchor="184.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
+                  <AnchorPane layoutX="165.0" prefHeight="92.0" prefWidth="766.0" style="-fx-background-color: #CDEEAA;" AnchorPane.bottomAnchor="508.0" AnchorPane.leftAnchor="184.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
                      <children>
                         <Label fx:id="namalbl" layoutX="125.0" layoutY="28.0" text="[Nama]">
                            <font>
@@ -82,17 +82,17 @@
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </Label>
-                  <Label fx:id="tambahkatlbl" layoutX="193.0" layoutY="106.0" onMousePressed="#tambahkat" text="Tambah Kategori" AnchorPane.leftAnchor="196.0">
+                  <Label fx:id="tambahkatlbl" layoutX="433.0" layoutY="260.0" onMousePressed="#tambahkat" text="Tambah Kategori" AnchorPane.leftAnchor="433.0">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <Label fx:id="hapuskatlbl" layoutX="196.0" layoutY="164.0" onMousePressed="#hapuskat" prefHeight="25.0" prefWidth="163.0" text="Hapus Kategori" AnchorPane.leftAnchor="196.0">
+                  <Label fx:id="hapuskatlbl" layoutX="433.0" layoutY="318.0" onMousePressed="#hapuskat" prefHeight="25.0" prefWidth="163.0" text="Hapus Kategori" AnchorPane.leftAnchor="433.0">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <Label fx:id="editkatlbl" layoutX="196.0" layoutY="136.0" onMousePressed="#editkat" text="Edit Kategori " AnchorPane.leftAnchor="196.0">
+                  <Label fx:id="editkatlbl" layoutX="433.0" layoutY="290.0" onMousePressed="#editkat" text="Edit Kategori " AnchorPane.leftAnchor="433.0">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>

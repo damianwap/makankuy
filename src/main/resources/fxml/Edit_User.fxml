@@ -15,15 +15,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="id.ac.ukdw.mavenproject1.Edit_User">
+<AnchorPane prefHeight="650.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="id.ac.ukdw.mavenproject1.Edit_User">
    <children>
       <AnchorPane layoutX="41.0" layoutY="29.0" prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: #CDEEAA;" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-      <AnchorPane layoutX="51.0" layoutY="39.0" prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: #FFFA67;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="200.0" />
+      <AnchorPane layoutX="51.0" layoutY="310.0" prefHeight="340.0" prefWidth="1000.0" style="-fx-background-color: #FFFA67;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="310.0" />
       <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="12.0">
          <children>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #F4FF61;" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="12.0">
                <children>
-                  <AnchorPane layoutY="92.0" prefHeight="258.0" prefWidth="180.0" style="-fx-background-color: #CDEEAA;" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="370.0" AnchorPane.topAnchor="92.0">
+                  <AnchorPane layoutY="92.0" prefHeight="508.0" prefWidth="182.0" style="-fx-background-color: #CDEEAA;" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="768.0" AnchorPane.topAnchor="92.0">
                      <children>
                         <Label fx:id="profillbl" layoutX="5.0" layoutY="47.0" onMousePressed="#profil" text="Profil" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="25.0">
                            <font>
@@ -35,7 +35,7 @@
                               <Font name="System Bold" size="15.0" />
                            </font>
                         </Label>
-                        <Label layoutX="4.0" layoutY="98.0" text="Pengaturan" AnchorPane.leftAnchor="4.0" AnchorPane.topAnchor="98.0">
+                        <Label fx:id="grafiklbl" layoutX="4.0" layoutY="98.0" onMousePressed="#grafik" text="Grafik" AnchorPane.leftAnchor="4.0" AnchorPane.topAnchor="98.0">
                            <font>
                               <Font name="System Bold" size="15.0" />
                            </font>
@@ -62,7 +62,7 @@
                         <Image url="@MakanKuy.png" />
                      </image>
                   </ImageView>
-                  <AnchorPane layoutX="165.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #CDEEAA;" AnchorPane.bottomAnchor="262.0" AnchorPane.leftAnchor="184.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
+                  <AnchorPane layoutX="165.0" prefHeight="90.0" prefWidth="766.0" style="-fx-background-color: #CDEEAA;" AnchorPane.bottomAnchor="510.0" AnchorPane.leftAnchor="184.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
                      <children>
                         <Label fx:id="namalbl" layoutX="125.0" layoutY="28.0" text="[Nama]">
                            <font>
@@ -76,25 +76,25 @@
                         </Label>
                      </children>
                   </AnchorPane>
-                  <TextField fx:id="namabaru" layoutX="311.0" layoutY="144.0" />
-                  <TextField fx:id="emailbaru" layoutX="311.0" layoutY="190.0" />
-                  <Button fx:id="simpanbtn" layoutX="452.0" layoutY="290.0" mnemonicParsing="false" onAction="#simpanbutton" text="Simpan" />
-                  <Label layoutX="206.0" layoutY="144.0" text="Nama">
+                  <TextField fx:id="namabaru" layoutX="488.0" layoutY="216.0" />
+                  <TextField fx:id="emailbaru" layoutX="488.0" layoutY="262.0" />
+                  <Button fx:id="simpanbtn" layoutX="629.0" layoutY="362.0" mnemonicParsing="false" onAction="#simpanbutton" text="Simpan" />
+                  <Label layoutX="383.0" layoutY="216.0" text="Nama">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="208.0" layoutY="193.0" text="Email">
+                  <Label layoutX="385.0" layoutY="265.0" text="Email">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="206.0" layoutY="241.0" text="Password">
+                  <Label layoutX="383.0" layoutY="313.0" text="Password">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <PasswordField fx:id="passbaru" layoutX="311.0" layoutY="238.0" />
+                  <PasswordField fx:id="passbaru" layoutX="488.0" layoutY="310.0" />
                </children>
             </AnchorPane>
          </children>

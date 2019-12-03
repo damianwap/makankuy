@@ -10,15 +10,15 @@
 <?import javafx.collections.FXCollections?>
 <?import javafx.collections.ObservableList?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="id.ac.ukdw.mavenproject1.EditKategori">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="id.ac.ukdw.mavenproject1.EditKategori">
    <children>
       <AnchorPane layoutX="41.0" layoutY="29.0" prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: #CDEEAA;" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-      <AnchorPane layoutX="51.0" layoutY="39.0" prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: #FFFA67;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="200.0" />
+      <AnchorPane layoutX="51.0" layoutY="303.0" prefHeight="347.0" prefWidth="1000.0" style="-fx-background-color: #FFFA67;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="303.0" />
       <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="12.0">
          <children>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #F4FF61;" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="12.0">
                <children>
-                  <AnchorPane layoutY="92.0" prefHeight="258.0" prefWidth="180.0" style="-fx-background-color: #CDEEAA;" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="370.0" AnchorPane.topAnchor="92.0">
+                  <AnchorPane layoutY="92.0" prefHeight="508.0" prefWidth="181.0" style="-fx-background-color: #CDEEAA;" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="769.0" AnchorPane.topAnchor="92.0">
                      <children>
                         <Label fx:id="profillbl" layoutX="5.0" layoutY="47.0" onMousePressed="#profil" text="Profil" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="25.0">
                            <font>
@@ -30,7 +30,7 @@
                               <Font name="System Bold" size="15.0" />
                            </font>
                         </Label>
-                        <Label layoutX="4.0" layoutY="98.0" text="Pengaturan" AnchorPane.leftAnchor="4.0" AnchorPane.topAnchor="98.0">
+                        <Label fx:id="grafiklbl" layoutX="4.0" layoutY="98.0" onMousePressed="#grafik" text="Grafik" AnchorPane.leftAnchor="4.0" AnchorPane.topAnchor="98.0">
                            <font>
                               <Font name="System Bold" size="15.0" />
                            </font>
@@ -57,7 +57,7 @@
                         <Image url="@MakanKuy.png" />
                      </image>
                   </ImageView>
-                  <AnchorPane layoutX="165.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #CDEEAA;" AnchorPane.bottomAnchor="262.0" AnchorPane.leftAnchor="184.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
+                  <AnchorPane layoutX="165.0" prefHeight="91.0" prefWidth="766.0" style="-fx-background-color: #CDEEAA;" AnchorPane.bottomAnchor="509.0" AnchorPane.leftAnchor="184.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
                      <children>
                         <Label fx:id="namalbl" layoutX="125.0" layoutY="28.0" text="[Nama]">
                            <font>
@@ -71,7 +71,7 @@
                         </Label>
                      </children>
                   </AnchorPane>
-                  <ComboBox fx:id="pilihjeniscb" layoutX="310.0" layoutY="116.0" onAction="#ganti" prefWidth="150.0" promptText="Pilih Jenis">
+                  <ComboBox fx:id="pilihjeniscb" layoutX="491.0" layoutY="229.0" onAction="#ganti" prefWidth="150.0" promptText="Pilih Jenis">
                         <items>
                         <FXCollections fx:factory="observableArrayList">
                 <String fx:value="MAKANAN" />
@@ -79,20 +79,20 @@
             </FXCollections>
                     </items>
                   </ComboBox>
-                  <ComboBox fx:id="pilihnamacb" layoutX="310.0" layoutY="151.0" prefWidth="150.0" promptText="Pilih Nama" />
-                  <TextField fx:id="katbaru" layoutX="311.0" layoutY="189.0" />
-                  <Label layoutX="192.0" layoutY="120.0" text="Jenis Kategori">
+                  <ComboBox fx:id="pilihnamacb" layoutX="491.0" layoutY="264.0" prefWidth="150.0" promptText="Pilih Nama" />
+                  <TextField fx:id="katbaru" layoutX="492.0" layoutY="302.0" />
+                  <Label layoutX="373.0" layoutY="233.0" text="Jenis Kategori">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Button fx:id="simpanbt" layoutX="446.0" layoutY="235.0" mnemonicParsing="false" onAction="#simpanbutton" text="Simpan" />
-                  <Label layoutX="189.0" layoutY="155.0" text="Nama Kategori">
+                  <Button fx:id="simpanbt" layoutX="627.0" layoutY="348.0" mnemonicParsing="false" onAction="#simpanbutton" text="Simpan" />
+                  <Label layoutX="370.0" layoutY="268.0" text="Nama Kategori">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="193.0" layoutY="192.0" text="Kategori Baru">
+                  <Label layoutX="374.0" layoutY="305.0" text="Kategori Baru">
                      <font>
                         <Font size="14.0" />
                      </font>
